@@ -73,3 +73,57 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Branch Strategy
+
+We use a simple variation of Git and GitHub Flow for branch control.
+
+### Create and switch to a develop branch
+
+```bash
+git checkout -b develop
+```
+
+#### Create a feature branch from develop
+
+```bash
+git checkout -b feature-branch develop
+```
+
+#### Make changes and commit
+
+```bash
+git add .
+
+git commit -m "Implement new feature"
+```
+
+### Developers
+
+Submit a PR to merge your feature changes to the `develop` branch
+
+### Maintainers
+
+#### Merge feature branch back to develop
+
+```bash
+git checkout develop
+
+git merge feature-branch
+```
+
+#### When ready for release, merge develop to master
+
+```bash
+git checkout master
+
+git merge develop
+```
+
+### Tag the release
+
+```bash
+git tag -a v1.0 -m "Release version 1.0"
+
+git push origin v1.0
+```
