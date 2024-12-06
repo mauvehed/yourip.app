@@ -1,13 +1,13 @@
 <h1 align="center">
-  <a href="https://github.com/mauvehed/yourip.app">
+  <a href="https://github.com/mauvehed/yourIP.app">
     <img src="docs/images/yourIP_logo.png" alt="yourIP Logo" width="100" height="100">
   </a>
 </h1>
 
 <div align="center">
-  <a href="https://github.com/mauvehed/yourip.app/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
+  <a href="https://github.com/mauvehed/yourIP.app/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">Report a Bug</a>
   -
-  <a href="https://github.com/mauvehed/yourip.app/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
+  <a href="https://github.com/mauvehed/yourIP.app/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
   -
   <a href="https://github.com/mauvehed/yourIP.app/issues/new?assignees=&labels=enhancement&template=03_CODEBASE_IMPROVEMENT.md&title=dev%3A+">Suggest Improvement</a>
   -
