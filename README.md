@@ -25,12 +25,12 @@
 
 </div>
 
+## About
+
+**yourIP** started as a simple web app to fulfill a common need I have of identifying my public IP without having to use other methods to relay it back to me. This is half a purposeful tool and the other half a nice excuse to learn some new things and deployment technologies.
+
+This repository is a continuation of and extension to my existing [yourip](https://github.com/mauvehed/yourip) repository which was written in python and flask. I seek to eventually meet feature parity as I rewrite the application in javascript and vue in this repository.
+
 ## Stats
 
 ![Alt](https://repobeats.axiom.co/api/embed/51a6836661e51cd2af55de642d907d4b57abef75.svg "Repobeats analytics image")
-
-## About
-
-**yourIP** started as a simple web app to fulfill a common need I have of identifying my public IP without having
-to use other methods to relay it back to me. This is half a purposeful tool and the other half a nice excuse to
-learn some new things and deployment technologies.
