@@ -4,6 +4,12 @@
     <p v-if="ip">{{ ip }}</p>
     <p v-else>Loading...</p>
   </div>
+  <div id="app">
+    <NuxtPage />
+    <div class="build-version">
+      Build Version: {{ buildVersion }}
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -20,6 +26,8 @@ onMounted(async () => {
     console.error("Failed to fetch IP:", error);
   }
 });
+
+const buildVersion = useRuntimeConfig().public.buildVersion;
 </script>
 
 <style>
@@ -30,6 +38,14 @@ onMounted(async () => {
   align-items: center;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+}
+
+.build-version {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: #aaa;
 }
 
 h1 {
