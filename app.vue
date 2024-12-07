@@ -19,7 +19,7 @@ const ip = ref(null);
 
 onMounted(async () => {
   try {
-    const res = await fetch("/api/ip");
+    const res = await fetch("/json");
     const data = await res.json();
     ip.value = data.ip;
   } catch (error) {
