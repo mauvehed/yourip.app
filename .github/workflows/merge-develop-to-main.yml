@@ -1,0 +1,37 @@
+name: Tag Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  merge-develop-to-main:
+    name: Merge Develop into Main
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          # Fetch all history for accurate branch merging
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Check out Develop Branch
+        run: git checkout develop
+
+      - name: Merge Develop into Main
+        run: |
+          git checkout main
+          git merge --no-ff develop -m "Merge branch 'develop' into 'main' on tag creation"
+
+      - name: Push to Main Branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin main

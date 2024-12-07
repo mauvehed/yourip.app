@@ -78,7 +78,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 We use a simple variation of Git and GitHub Flow for branch control.
 
-### Create and switch to a develop branch
+### Create and switch to a develop branch (one-time)
 
 ```bash
 git checkout -b develop
