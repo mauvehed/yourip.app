@@ -100,7 +100,7 @@ git commit -m "Implement new feature"
 
 ### Developers
 
-Submit a PR to merge your feature changes to the `develop` branch
+Submit a PR to merge your feature changes to the `origin/develop` branch
 
 ### Maintainers
 
