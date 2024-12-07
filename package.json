@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "generate-version": "node scripts/generate-build-version.js",
-    "build": "yarn generate-version && nuxt build",
+    "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",

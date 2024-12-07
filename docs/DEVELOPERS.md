@@ -84,6 +84,18 @@ We use a simple variation of Git and GitHub Flow for branch control.
 git checkout -b develop
 ```
 
+### Switch to a develop branch (every other time)
+
+```bash
+git checkout develop
+```
+
+#### Ensure develop is in sync with main
+
+```bash
+git merge main
+```
+
 #### Create a feature branch from develop
 
 ```bash
