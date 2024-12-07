@@ -46,7 +46,7 @@ the website and what format your ask for the IP address to be returned in.
 2. Use your favorite command line web tool (e.g. curl, wget) to access one of the two endpoints (raw or json)
 
    ```sh
-   $ curl -L yourIP.app/json
+   $ curl -L yourip.app/json
    {
      "ip": "123.45.6.78"
    }
