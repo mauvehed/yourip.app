@@ -7,6 +7,10 @@ WORKDIR /app
 # Copy package.json and package-lock.json (or yarn.lock)
 COPY package*.json ./
 
+
+# Copy pre-generated build-version.json
+COPY build-version.json ./
+
 # Install dependencies
 RUN npm install
 
