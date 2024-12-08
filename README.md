@@ -31,6 +31,14 @@
 
 This repository is a continuation of and extension to my existing [yourip](https://github.com/mauvehed/yourip) repository which was written in python and flask. I seek to eventually meet feature parity as I rewrite the application in javascript and vue in this repository.
 
+### Built With
+
+<img src="https://img.shields.io/badge/Javascript-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/Vue-000000?style=for-the-badge&logo=flask&logoColor=white" /> 
+<img src="https://img.shields.io/badge/Visual_Studio_Code-3776AB?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
+<img src="https://img.shields.io/badge/Vite-000000?style=for-the-badge&logo=flask&logoColor=white" /> 
+<img src="https://img.shields.io/badge/Vercel-3776AB?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
+
 ## Usage
 
 ### Development
