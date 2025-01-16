@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <h1>Your IP Address</h1>
     <p v-if="ip">{{ ip }}</p>
     <p v-else>Loading...</p>
   </div>
@@ -31,6 +30,16 @@ const buildVersion = useRuntimeConfig().public.buildVersion;
 </script>
 
 <style>
+:root {
+  --background-color: #373535;
+  --text-color: #e4e4e4;
+  /* Add other variables as needed */
+}
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  /* Apply other variables as needed */
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -54,6 +63,6 @@ h1 {
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 </style>
