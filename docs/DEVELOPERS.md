@@ -124,10 +124,10 @@ git checkout develop
 git merge feature-branch
 ```
 
-#### When ready for release, merge develop to master
+#### When ready for release, merge develop to main
 
 ```bash
-git checkout master
+git checkout main
 
 git merge develop
 ```
