@@ -1,0 +1,47 @@
+name: Build Version
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Generate Build Version
+        id: generate-version
+        run: |
+          yarn generate-version
+          echo "BUILD_VERSION=$(cat build-version.json | jq -r .version)" >> $GITHUB_ENV
+
+      - name: Build Application
+        run: yarn build
+
+      - name: Upload Build Version
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-version
+          path: build-version.json
+          retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Build Version
+        uses: actions/download-artifact@v3
+        with:
+          name: build-version
+          path: .
+
+      - name: Deploy Application
+        run: |
+          # Your deployment steps here
+          echo "Deploying version: ${{ env.BUILD_VERSION }}" 
