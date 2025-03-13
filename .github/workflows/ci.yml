@@ -50,25 +50,32 @@ jobs:
           docker push ghcr.io/${{ github.repository_owner }}/yourip-app:${{ github.ref_name }}
 
   merge:
-    name: Merge Develop to Main
-    needs: docker
-    if: startsWith(github.ref, 'refs/tags/')
+    needs: [docker]
     runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Configure Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Merge Develop into Main
-        run: |
-          git checkout main
-          git merge --no-ff origin/develop -m "Merge branch 'develop' into 'main' on tag creation"
-          git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: main
+          base: main
+          title: 'chore: merge develop into main for release ${{ github.ref_name }}'
+          body: |
+            Automated PR to merge develop into main for release ${{ github.ref_name }}
+            
+            This PR was created automatically by the CI workflow.
+            Please review and merge if all checks pass.
+          labels: |
+            automated
+            release
+          draft: false
+          delete-branch: false
+          commit-message: 'chore: merge develop into main for release ${{ github.ref_name }}'
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          signoff: false 
