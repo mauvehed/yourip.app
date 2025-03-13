@@ -57,7 +57,7 @@ import { ref, onMounted } from "vue";
 const ip = ref(null);
 const loading = ref(true);
 const error = ref(null);
-const theme = ref('light');
+const theme = ref('dark');
 const showToast = ref(false);
 
 const fetchIP = async () => {
@@ -95,7 +95,7 @@ const copyToClipboard = async (text) => {
 };
 
 onMounted(() => {
-  theme.value = localStorage.getItem('theme') || 'light';
+  theme.value = localStorage.getItem('theme') || 'dark';
   fetchIP();
 });
 
