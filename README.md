@@ -1,3 +1,5 @@
+# yourIP.app
+
 <h1 align="center">
   <a href="https://github.com/mauvehed/yourIP.app">
     <img src="docs/images/yourIP_logo.png" alt="yourIP Logo" width="100" height="100">
@@ -10,8 +12,6 @@
   <a href="https://github.com/mauvehed/yourIP.app/issues/new?assignees=&labels=enhancement&template=02_FEATURE_REQUEST.md&title=feat%3A+">Request a Feature</a>
   -
   <a href="https://github.com/mauvehed/yourIP.app/issues/new?assignees=&labels=enhancement&template=03_CODEBASE_IMPROVEMENT.md&title=dev%3A+">Suggest Improvement</a>
-  -
-
 </div>
 
 <div align="center">
@@ -27,17 +27,17 @@
 
 ## About
 
-**yourIP** started as a simple web app to fulfill a common need I have of identifying my public IP without having to use other methods to relay it back to me. This is half a purposeful tool and the other half a nice excuse to learn some new things and deployment technologies.
+**yourIP** is a simple web app that helps you identify your public IP address without having to use other methods to relay it back to you. This is half a purposeful tool and the other half a nice excuse to learn some new technologies and deployment techniques.
 
-This repository is a continuation of and extension to my existing [yourip](https://github.com/mauvehed/yourip) repository which was written in python and flask. I seek to eventually meet feature parity as I rewrite the application in javascript and vue in this repository.
+This repository is a continuation of and extension to my existing [yourip](https://github.com/mauvehed/yourip) repository which was written in Python and Flask. I seek to eventually meet feature parity as I rewrite the application in JavaScript and Vue in this repository.
 
 ### Built With
 
-<img src="https://img.shields.io/badge/Javascript-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/Vue-000000?style=for-the-badge&logo=flask&logoColor=white" />
-<img src="https://img.shields.io/badge/Visual_Studio_Code-3776AB?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
-<img src="https://img.shields.io/badge/Vite-000000?style=for-the-badge&logo=flask&logoColor=white" />
-<img src="https://img.shields.io/badge/Vercel-3776AB?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+<img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" />
+<img src="https://img.shields.io/badge/Nuxt.js-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white" />
+<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
 
 ## Usage
 

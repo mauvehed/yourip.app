@@ -114,7 +114,6 @@ git push origin feature/your-feature-name
 - The CI pipeline will automatically:
   - Build the application
   - Run tests
-  - Generate build version
 - Get code review and address any feedback
 - Once approved, merge into `develop`
 
@@ -141,11 +140,10 @@ git push origin v1.0.0
 
 3. **Automated Release Process**
    When you push the tag, the CI/CD pipeline will:
-
-- Build the application
-- Generate build version
-- Build and publish Docker images with both `latest` and version tags
-- Automatically merge `develop` into `main`
+   - Build the application
+   - Build and publish Docker images with both `latest` and version tags
+   - Create a pull request from `develop` to `main`
+   - Once the PR is merged, the release is complete
 
 ### Best Practices
 
@@ -191,8 +189,8 @@ The project uses GitHub Actions for continuous integration and deployment:
 
 - Runs on all pushes and pull requests
 - Installs dependencies
-- Generates build version
 - Builds the application
+- Runs tests
 
 2. **Docker Job**
 
@@ -204,8 +202,8 @@ The project uses GitHub Actions for continuous integration and deployment:
 3. **Merge Job**
 
 - Runs only on tag pushes
-- Automatically merges `develop` into `main`
-- Ensures production branch is up to date
+- Creates a pull request from `develop` to `main`
+- Ensures proper code review and testing before merging to production
 
 ## Docker Development
 
