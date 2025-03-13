@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "generate-version": "node scripts/generate-build-version.js",
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "build": "yarn generate-version && nuxt build",
+    "dev": "yarn generate-version && nuxt dev",
+    "generate": "yarn generate-version && nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },

@@ -6,7 +6,9 @@
     </div>
 
     <div class="content-container">
-      <h1>Your IP Address</h1>
+      <p><img src="/docs/images/yourIP_logo.png" alt="yourIP Logo" width="100" height="100"></p>
+      <br>
+      <h1>YourIP Address</h1>
 
       <div class="ip-display" :class="{ error: error }">
         <template v-if="error">
@@ -42,7 +44,7 @@
     </div>
 
     <div class="build-version">
-      Build Version: {{ buildVersion }}
+      Build: {{ buildVersion.version }}
     </div>
 
     <div class="toast" v-if="showToast" :class="{ 'show': showToast }">

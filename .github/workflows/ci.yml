@@ -1,0 +1,77 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ develop ]
+    tags: [ 'v*' ]
+  pull_request:
+    branches: [ develop, main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Generate Build Version
+        run: yarn generate-version
+
+      - name: Build Application
+        run: yarn build
+
+  docker:
+    name: Build and Publish Docker
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push Docker Image
+        run: |
+          docker build -t ghcr.io/${{ github.repository_owner }}/yourip-app:latest .
+          docker tag ghcr.io/${{ github.repository_owner }}/yourip-app:latest ghcr.io/${{ github.repository_owner }}/yourip-app:${{ github.ref_name }}
+          docker push ghcr.io/${{ github.repository_owner }}/yourip-app:latest
+          docker push ghcr.io/${{ github.repository_owner }}/yourip-app:${{ github.ref_name }}
+
+  merge:
+    name: Merge Develop to Main
+    needs: docker
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Merge Develop into Main
+        run: |
+          git checkout main
+          git merge --no-ff develop -m "Merge branch 'develop' into 'main' on tag creation"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
