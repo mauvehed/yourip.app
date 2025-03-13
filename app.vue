@@ -44,7 +44,7 @@
     </div>
 
     <div class="build-version">
-      Build: {{ buildVersion.version }}
+      Build: {{ buildVersion }}
     </div>
 
     <div class="toast" v-if="showToast" :class="{ 'show': showToast }">
