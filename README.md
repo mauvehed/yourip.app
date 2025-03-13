@@ -17,7 +17,7 @@
 <div align="center">
 <br />
 
-[![CodeQL](https://github.com/mauvehed/yourIP.app/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/mauvehed/yourIP.app/actions/workflows/codeql-analysis.yml)
+[![CI/CD Pipeline](https://github.com/mauvehed/yourip.app/actions/workflows/ci.yml/badge.svg)](https://github.com/mauvehed/yourip.app/actions/workflows/ci.yml) [![CodeQL](https://github.com/mauvehed/yourIP.app/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/mauvehed/yourIP.app/actions/workflows/codeql-analysis.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4ec1fc69d8a14048a80124167f6f7664)](https://www.codacy.com/gh/mauvehed/yourIP.app/dashboard)
 
 [![Project license](https://img.shields.io/github/license/mauvehed/yourip.app.svg?style=flat-square)](LICENSE)
@@ -34,9 +34,9 @@ This repository is a continuation of and extension to my existing [yourip](https
 ### Built With
 
 <img src="https://img.shields.io/badge/Javascript-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/Vue-000000?style=for-the-badge&logo=flask&logoColor=white" /> 
+<img src="https://img.shields.io/badge/Vue-000000?style=for-the-badge&logo=flask&logoColor=white" />
 <img src="https://img.shields.io/badge/Visual_Studio_Code-3776AB?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
-<img src="https://img.shields.io/badge/Vite-000000?style=for-the-badge&logo=flask&logoColor=white" /> 
+<img src="https://img.shields.io/badge/Vite-000000?style=for-the-badge&logo=flask&logoColor=white" />
 <img src="https://img.shields.io/badge/Vercel-3776AB?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
 
 ## Usage
