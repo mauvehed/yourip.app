@@ -1,14 +1,20 @@
 {
-  "name": "nuxt-app",
+  "name": "yourip.app",
   "private": true,
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
-    "generate-version": "node scripts/generate-build-version.js",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "generate-version": "node scripts/generate-build-version.js",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "test:ci": "vitest run --coverage --reporter=json --outputFile=coverage/coverage-final.json"
   },
   "dependencies": {
     "nuxt": "^3.14.1592",
