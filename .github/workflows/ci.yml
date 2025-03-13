@@ -62,23 +62,25 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
       
+      - name: Debug Info
+        run: |
+          echo "Current ref: ${{ github.ref }}"
+          echo "Current branch: ${{ github.head_ref }}"
+          echo "Base branch: ${{ github.base_ref }}"
+          git branch -a
+          git status
+      
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: actions/github-script@v7
         with:
-          branch: develop
-          base: main
-          title: 'chore: merge develop into main for release ${{ github.ref_name }}'
-          body: |
-            Automated PR to merge develop into main for release ${{ github.ref_name }}
-            
-            This PR was created automatically by the CI workflow.
-            Please review and merge if all checks pass.
-          labels: |
-            automated
-            release
-          draft: false
-          delete-branch: false
-          commit-message: 'chore: merge develop into main for release ${{ github.ref_name }}'
-          committer: GitHub <noreply@github.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          signoff: false 
+          script: |
+            const { data: pr } = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `chore: merge develop into main for release ${context.ref.replace('refs/tags/', '')}`,
+              body: `Automated PR to merge develop into main for release ${context.ref.replace('refs/tags/', '')}\n\nThis PR was created automatically by the CI workflow.\nPlease review and merge if all checks pass.`,
+              head: 'develop',
+              base: 'main',
+              labels: ['automated', 'release']
+            });
+            console.log('Created PR:', pr.html_url); 
