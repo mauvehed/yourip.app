@@ -71,7 +71,7 @@ jobs:
       - name: Merge Develop into Main
         run: |
           git checkout main
-          git merge --no-ff develop -m "Merge branch 'develop' into 'main' on tag creation"
+          git merge --no-ff origin/develop -m "Merge branch 'develop' into 'main' on tag creation"
           git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
